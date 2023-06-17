@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Flower</title>
+    <script type="text/javascript" async>
+        function flashFlower() {
+            var flowers = document.querySelectorAll('.petal');
+            console.log("EXECUTED")
+            console.log(flowers)
+
+            flowers.forEach( (flower) => {
+                console.log("INITIAL PETAL COLOR IS : ", flower.style.backgroundColor)
+                // console.log(flower.style)
+                // console.log(flower.getAttribute("class"))
+                // console.log(flower.style.backgroundColor)
+                if(flower.getAttribute("class") == "petal pink"){
+                    if (flower.style.backgroundColor == "" || flower.style.backgroundColor === "rgb(254, 118, 150)") {
+                    console.log("REACHED PINK STATEMENT ***")
+                    flower.style.backgroundColor = 'white';
+                    flower.style.boxShadow = "";
+                    } else{
+                        flower.style.backgroundColor = '#fe7696';
+                    }
+                } else if(flower.getAttribute("class") == "petal purple"){
+                    if (flower.style.backgroundColor == "" || flower.style.backgroundColor === "rgb(203, 195, 227)") {
+                    console.log("REACHED PURPLE STATEMENT ***")
+                    flower.style.backgroundColor = 'black';
+                    } else{
+                        flower.style.backgroundColor = '#CBC3E3';
+                    }
+                }
+
+                console.log("NEW PETAL COLOR IS : ", flower.style.backgroundColor)
+
+                
+            } )
+            
+
+            // setTimeout(flashFlower, 200);
+        }
+
+        // function sleepFor(sleepDuration){
+        //     var now = new Date().getTime();
+        //     while(new Date().getTime() < now + sleepDuration){ 
+        //         /* Do nothing */ 
+        //     }
+        // }   
+
+        // function test() {
+        //     flashFlower();
+        //     var now = new Date().getTime();
+        //     while(new Date().getTime() < now + 3000){ 
+        //         /* Do nothing */ 
+        //     }
+        //     flashFlower();
+        // }
+        setInterval(flashFlower, 5000)
+        // while(true){
+        //     flashFlower();
+        //     var now = new Date().getTime();
+        //     while(new Date().getTime() < now + 10000){ 
+        //         /* Do nothing */ 
+        //     }
+        // }
+        // flashFlower();
+    </script>
+</head>
+
+<body>
+    <link href="https://fonts.font.im/css?family=Sacramento" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <div class="container">
+        <div class="letter">
+            <h1>This is such a private message and wow look at this font amirite and how about this flower right next to me tho wowowowowowow</h1>
+        </div>
+        <div class="rose">
+            <div class="flower">
+                <div class="petal pink"></div>
+                <div class="petal pink"></div>
+                <div class="petal purple"></div>
+                <div class="petal purple"></div>
+                <div class="petal purple"></div>
+            </div>
+            <div class="leaf">
+                <div class="stem"></div>
+                <div class="leafs"></div>
+                <div class="leafs"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
